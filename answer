@@ -1,0 +1,63 @@
+//Author: Oussoumane Mahaman Madani (GoMyCode)
+
+<?php
+
+$tab1 = array();
+for ($i = 1; $i <= 10; $i++)
+{
+    $tab1[] = $i;
+}
+
+//var_dump ($tab1);
+
+
+//creating the second table from the first
+$tab2 = array();
+for ($x = 0; $x < 9; $x++)
+{
+    $tab2[] = $tab1[$x]/10;
+}
+//var_dump ($tab2);
+
+//creating the third table from the second
+$tab3 = array();
+foreach($tab2 as $val){
+    //echo $val;
+    $newVal = sin($val);
+    $tab3["$val"] =  $newVal;
+   // print_r($tab3);
+    echo "<br>";
+}
+//var_dump ($tab3);
+
+?>
+
+<!-- creating a table in html and put the data of the third table in -->
+<html>
+        <head>
+            <title>Array 1-63</title>
+        </head>
+
+<body>
+        <table border ="2">
+            <tr>
+                <th>Second Array Values</th>
+                <th>Sin of the Values</th>
+            </tr>
+
+            <?php
+            foreach($tab3 as $index => $value){
+                                ?>
+                <tr>
+                    <td><?= $index ?></td>
+                    <td><?= $value ?></td>
+                </tr>
+            <?php
+
+            }
+?>
+        </table>
+
+
+
+</html>
